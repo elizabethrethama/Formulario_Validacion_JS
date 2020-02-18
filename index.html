@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/validador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <title>Formulario Validado JS</title>
 </head>
 <body>
+  <div class="contenedor">
     <h1>Formulario</h1>
-    <form id="formulario">
+    <form>
         <table>
             <tr>
                 <td>Nombre: </td>
@@ -24,31 +32,32 @@
             <tr>
                 <td>Fecha de nacimiento: </td>
                 <td>
-                    <input type="text" name="dia" size="2" id="dia" />
-                    <input type="text" name="mes" size="2" id="mes" />
-                    <input type="text" name="ano" id="ano" size="4" />
+                    <input class="fecha" type="text" name="dia" size="2" id="dia" />
+                    <input class="fecha" type="text" name="mes" size="2" id="mes" />
+                    <input class="fecha" type="text" name="ano" id="ano" size="4" />
                 </td>
             </tr>
             <tr>
-                <td>Sexo : </td>
+                <td>Sexo: </td>
                 <td>
-                    <input type="radio" name="sexo" value="H" checked /> Hombre
-                    <input type="radio" name="sexo" value="M" /> Mujer
+                    <input type="radio" id="hombre" name="sexo" value="H" checked /> Hombre
+                    <input type="radio" id="mujer" name="sexo" value="M" /> Mujer
                 </td>
             </tr>
             <tr>
                 <td>Mayor de 18:</td>
                 <td>
-                    <input type="checkbox" name="mayor" id="mayor" checked/>
+                    <input type="checkbox" name="mayor" id="mayor" />
                 </td>
             </tr>
             </td>
             </tr>
         </table>
         <p>
-            <input type="submit" value="Enviar" id="enviar" />
+            <input type="button" value="Enviar" id="enviar" onclick="validacion();" />
             <input type="reset" value="Borrar" id="borrar" />
         </p>
     </form>
+  </div>
 </body>
 </html>
